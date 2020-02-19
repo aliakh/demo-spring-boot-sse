@@ -228,7 +228,7 @@ public class SseWebMvcController
 
 To send events with only the `data` field, it should be used the [SseEmitter.send(Object object)](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/mvc/method/annotation/SseEmitter.html#send-java.lang.Object-) method. To send events with the fields `data`, `id`, `event`, `retry` and comments, it should be used the  [SseEmitter.send(SseEmitter.SseEventBuilder builder)](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/mvc/method/annotation/SseEmitter.html#send-org.springframework.web.servlet.mvc.method.annotation.SseEmitter.SseEventBuilder-) method.
 
-In the examples below, to send the same events to many clients, the [SseEmitters](https://github.com/aliakh/demo-spring-sse/blob/master/server-mvc/src/main/java/demo/sse/server/mvc/controller/SseEmitters.java) class was implemented. To create a client connection, there is the `add(SseEmitter emitter)` method that saves a `SseEmitter` in a thread-safe container. To send events asynchronously, there is the `send(Object obj)` method that sends the same event to all connected clients.
+In the examples below, to send the same events to many clients, the [SseEmitters](https://github.com/aliakh/demo-spring-sse/blob/master/server-web-mvc/src/main/java/demo/sse/server/web/mvc/controller/SseEmitters.java) class was implemented. To create a client connection, there is the `add(SseEmitter emitter)` method that saves a `SseEmitter` in a thread-safe container. To send events asynchronously, there is the `send(Object obj)` method that sends the same event to all connected clients.
 
 A simplified class source:
 
