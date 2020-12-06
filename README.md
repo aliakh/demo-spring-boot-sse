@@ -272,7 +272,7 @@ class SseEmitters {
 
 In this example, a server sends a _short-lasting periodic events_ stream - a finite stream of words (_[The quick brown fox jumps over the lazy dog](https://en.wikipedia.org/wiki/The_quick_brown_fox_jumps_over_the_lazy_dog)_ pangram) every second, until the words are finished. 
 
-To implement this, the mentioned [SseEmitters](https://github.com/aliakh/demo-spring-sse/blob/master/server-mvc/src/main/java/demo/sse/server/mvc/controller/SseEmitters.java) class was used. To send events asynchronously and periodically, a _cached thread pool_ has been created. Because the events stream is short-lasting, _each client connection_ submits a _separate task_ to the thread pool, right inside the controller method. 
+To send events asynchronously and periodically, a _cached thread pool_ has been created. Because the events stream is short-lasting, _each client connection_ submits a _separate task_ to the thread pool, right inside the controller method and the mentioned [SseEmitters](https://github.com/aliakh/demo-spring-sse/blob/master/server-mvc/src/main/java/demo/sse/server/mvc/controller/SseEmitters.java) class was not used. 
 
 A simplified controller source:
 
